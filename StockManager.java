@@ -80,7 +80,13 @@ public class StockManager
      */
     public int numberInStock(int id)
     {
-        return 0;
+       int quantity = 0;
+        Product product = findProduct(id);
+        if (product != null) 
+        {
+            quantity = product.getQuantity();
+        }
+        return quantity;
     }
 
     /**
