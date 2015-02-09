@@ -22,7 +22,7 @@ public class StockDemo
         manager.addProduct(new Product(37,  "Mobile Phone"));
         manager.addProduct(new Product(23,  "Microwave Oven"));
     }
-    
+
     /**
      * Provide a very simple demonstration of how a StockManager
      * might be used. Details of one product are shown, the
@@ -36,7 +36,7 @@ public class StockDemo
         manager.delivery(132, 5);
         manager.printProductDetails();
     }
-    
+
     /**
      * Show details of the given product. If found,
      * its name and stock quantity will be shown.
@@ -49,7 +49,7 @@ public class StockDemo
             System.out.println(product.toString());
         }
     }
-    
+
     /**
      * Sell one of the given item.
      * Show the before and after status of the product.
@@ -58,14 +58,14 @@ public class StockDemo
     public void sellProduct(int id)
     {
         Product product = getProduct(id);
-        
+
         if(product != null) {
             showDetails(id);
             product.sellOne();
             showDetails(id);
         }
     }
-    
+
     /**
      * Get the product with the given id from the manager.
      * An error message is printed if there is no match.
@@ -77,7 +77,7 @@ public class StockDemo
         Product product = manager.findProduct(id);
         if(product == null) {
             System.out.println("Product with ID: " + id +
-                               " is not recognised.");
+                " is not recognised.");
         }
         return product;
     }
@@ -89,4 +89,6 @@ public class StockDemo
     {
         return manager;
     }
+
+   
 }

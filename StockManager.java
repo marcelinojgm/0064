@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Manage the stock in a business.
@@ -119,7 +120,7 @@ public class StockManager
      * está por debajo de un determinado número que será pasado como parámetro al método.
      * @quantity cantidad en stock 
      */
-    public void StockManager(int quantity)
+    public void printProductDetailsBelow(int quantity)
     {
         //recorremos la coleccion de productos
         for (Product product : stock)
@@ -132,6 +133,11 @@ public class StockManager
         } 
     }
     
+     /**
+     * Try to find a product in the stock with the given name.
+     * @return The name product, or null if there is none
+     *         with a matching ID.
+     */
     public Product findProduct(String name)
     {
          //cantidad en stock del elemnto con id solicitada, en caso de no existir es cero
@@ -143,7 +149,7 @@ public class StockManager
         while(stock.size()> index && !found)
         {
             product = stock.get(index);
-            //si concide la id macar como encontrado
+            //si concide el nombre macar como encontrado
             if(name == product.getName())
             {
                 found = true;
@@ -158,4 +164,5 @@ public class StockManager
 
         return product;
     }
+    
 }
