@@ -37,6 +37,13 @@ public class StockManager
      */
     public void delivery(int id, int amount)
     {
+        //guardado del producto solicitado
+        Product product = findProduct(id);
+        //incremento de quantity si el producto existe
+        if(product != null)
+        {
+            product.increaseQuantity(amount);
+        }
     }
     
     /**
