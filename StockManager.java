@@ -66,5 +66,15 @@ public class StockManager
      */
     public void printProductDetails()
     {
+        
+        //mientras haya elementos en la coleccion
+        if (stock.size() > 0)
+        {
+            //impresion de info de cada eleemento
+            for (Product product : stock)
+            {
+                System.out.println(product.toString());
+            }
+        }
     }
 }
