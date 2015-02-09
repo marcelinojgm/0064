@@ -46,7 +46,29 @@ public class StockManager
      */
     public Product findProduct(int id)
     {
-        return null;
+            //cantidad en stock del elemnto con id solicitada, en caso de no existir es cero
+        Product product = null;
+        //false elemento no encontr
+        boolean found = false;
+        int index = 0;
+        //recorrido de stock en busca del producto con id solicitado
+        while(stock.size()> index && !found)
+        {
+            product = stock.get(index);
+            //si concide la id macar como encontrado
+            if(product.getID() == id)
+            {
+                found = true;
+            }
+            index++;
+        }
+
+        if(!found)
+        {
+            product = null;
+        }
+
+        return product;
     }
     
     /**
